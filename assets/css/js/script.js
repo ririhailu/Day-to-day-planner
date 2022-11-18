@@ -82,3 +82,16 @@ var interval = setInterval(function() {
         }
     });
   }
+
+  $(document).ready(function(){
+    initPage()
+    background()
+  
+    // Buttons (save to Local Storage)
+    $(".saveBtn").on("click", function(){
+      userInput = $(this).siblings(".form-control").val().trim();
+      console.log(userInput);
+      hourSpan = $(this).siblings(".input-group-prepend").text().trim();
+      console.log(hourSpan);
+      localStorage.setItem(hourSpan, JSON.stringify(userInput));
+  
